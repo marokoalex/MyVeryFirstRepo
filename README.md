@@ -1,6 +1,6 @@
 [中文](/README-zh.md)
 # MyVeryFirstRepo
-I put up some materials for practicing. Ignore the following contents, please.
+This is a meaningless repo. I simply put up some materials for practicing. Ignore the following contents, please.
 I wrote this up for fun and to help me remember how I set things up.
 
 Table of Contents
