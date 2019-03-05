@@ -1,16 +1,17 @@
 [中文](/README-zh.md)
 # MyVeryFirstRepo
+I put up some materials for practicing. Ignore the following contents, please.
 I wrote this up for fun and to help me remember how I set things up.
 
 Table of Contents
 =================
   * [Hardware](#hardware)
     * [3D Models](#platform)
-    * [Training Data](#parts)
+    * [The Parts](#parts)
   * [Program](#programs-and-training-data)
     * [3D Models](#3d-models)
-    * [Training Data](#training-data)
-      * [IronCar and Toulouse Robot Race Datasets](#ironcar-and-toulouse-robot-race-datasets)
+    * [Testing Data](#testing-data)
+      * [Whatever that follows](#whatever-that-follows)
   * [How to Build](#how-to-build)
   * [Donation](#donation)
 
@@ -31,6 +32,11 @@ Table of Contents
 - [Battery Holder](https://cad.onshape.com/documents/a94876919eca38f49abb5ed6/w/b7e86a4005e4b951f0e3d31a/e/5d33c78dde85b96e033f5c9b)
 Note: the Battery Holder was designed for this [External Battery](https://www.amazon.fr/gp/product/B00Y7S4JRQ/ref=oh_aui_detailpage_o00_s01?ie=UTF8&psc=1)
 
+### Testing Data
+Repeated messages.......
+
+#### Whatever that Follows
+Repeated messages.......
 
 ## How to Build
 
