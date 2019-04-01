@@ -1,0 +1,14 @@
+$sudo apt-get update
+$sudo apt-get upgrade
+
+#Enable SSH
+$sudo apt-get install ssh
+$sudo /etc/init.d/ssh start
+
+#Start SSH at bootup
+$sudo update-rc.d ssh defaults
+$sudo reboot
+
+#SSH or Telnet through Putty
+User: pi
+Password: raspberry
