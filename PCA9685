@@ -1,24 +1,39 @@
-#Note, installing modules with pip3, you have to run "python3" for the scripts
+# Note, installing modules with pip3, you have to run "python3" for the scripts
 
 1) Install Dependencies
-#https://github.com/adafruit/Adafruit_CircuitPython_Bundle
+# https://github.com/adafruit/Adafruit_CircuitPython_Bundle
 $pip3 install adafruit-circuitpython-lis3dh
 
 2) Install Motor module
-#https://github.com/adafruit/Adafruit_CircuitPython_Motor
+# https://github.com/adafruit/Adafruit_CircuitPython_Motor
 $pip3 install adafruit-circuitpython-motor
-#run i2cdetect to decide PCA9685 i2c address
+# run i2cdetect to decide PCA9685 i2c address
 $i2cdetect -y 1
-#modify i2c addr in examples/dc_motor.py
+# modify i2c addr in examples/dc_motor.py
 $nano ./dc_motor.py
-#run sample code
+# run sample code
 $python3 ./dc_motor.py
 
 3) or Install Adafruit MotorKit
-#https://github.com/adafruit/Adafruit_CircuitPython_MotorKit
+# https://github.com/adafruit/Adafruit_CircuitPython_MotorKit
 $pip3 install adafruit-circuitpython-motorkit
-#run i2cdetect to decide PCA9685 i2c address, it shows 0x40(64) for example
-#modify i2c address as the argument passed in MotorKit constructor as 64
+# run i2cdetect to decide PCA9685 i2c address, it shows 0x40(64) for example
+# modify i2c address as the argument passed in MotorKit constructor as 64
 $nano ./motorkit_dc_test
-#run sample code
+# run sample code
 $python3 ./motorkit_dc_test.py
+
+
+
+# Some Other C/C++ PCA9685 libraries
+https://github.com/edlins/libPCA9685
+https://github.com/vanvught/rpidmx512/tree/master/lib-pca9685
+# Calling C Functions in Python
+https://www.geeksforgeeks.org/how-to-call-a-c-function-in-python/
+////////////////////////////////////////////
+import ctypes 
+NUM = 16      
+fun = ctype.CDLL(libfun.so)   
+fun.myFunction.argtypes(ctypes.c_int) 
+returnVale = fun.myFunction(NUM)   
+////////////////////////////////////////////
