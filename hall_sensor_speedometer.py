@@ -14,12 +14,13 @@ import time
 import datetime
 
 # define constants
-HALL_SENSOR_C1 = 17 # Phase-A
-HALL_SENSOR_C2 = 27 # Phase-B
+HALL_SENSOR_C1 = 19 # Phase-A
+HALL_SENSOR_C2 = 26 # Phase-B
 
 def setup():
+  print "SETUP"
   # using the BOARD numbering system
-  GPIO.setmode(GPIO.BOARD)
+  GPIO.setmode(GPIO.BCM)
   GPIO.setwarnings(False)
   # Setup GPIO pins
   GPIO.setup(HALL_SENSOR_C1, GPIO.IN)
@@ -34,21 +35,23 @@ def sensorCB(channel):
   sensorCounter += 1
   #t = time.time()
   #tStamp = datetime.datetime.fromtimestamp(t).strftime('%H:%M:%S')  
-  #print "Sensor PULSE " + tStamp
+  #print ("Sensor PULSE " + repr(tStamp))
 
 def mainLoop():
   global sensorCounter
   sensorCounter = 0
-  GPIO.add_event_detect(HALL_SENSOR_C1, GPIO.RISING, callback=sensorCB)
-  GPIO.add_event_detect(HALL_SENSOR_C2, GPIO.RISING, callback=sensorCB)  
+  print "MAINLOOP"
+  GPIO.add_event_detect(HALL_SENSOR_C1, GPIO.FALLING, callback=sensorCB)
+  GPIO.add_event_detect(HALL_SENSOR_C2, GPIO.FALLING, callback=sensorCB)  
   while True :
     time.sleep(1)
-    print "Sensor Counter: ", sensorCounter 
+    print ("Counter: " + repr(sensorCounter) + " REV: " + repr(sensorCounter/(22*90))) 
 
 if __name__=="__main__":
-  print "Hall sensor Speedometer\n"
-	setup()
-	try:
-		mainLoop()
-	except KeyboardInterrupt:  # When press control C child program will distroy
-		destroy()
+  print "Hall sensor Speedometer"
+  setup()
+  try:
+    mainLoop()
+  except KeyboardInterrupt:  # Ctrl-C 
+    destroy()
+
